@@ -3,6 +3,7 @@ import { View, Text, Button, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './screens/Home';
+import Stories from './screens/Stories';
 
 function DetailsScreen({ navigation }) {
   return (
@@ -48,6 +49,15 @@ function App() {
       >
 
         <Stack.Screen name="Dark Stories" component={Home}
+          options={{
+            tabBarLabel: 'PlayList',
+
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="playlist-play" size={26} color={color} />
+            ),
+          }}
+        />
+        <Stack.Screen name="Stories" component={Stories}
           options={{
             tabBarLabel: 'PlayList',
 

@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, Dimensions, ImageBackground, Image, StyleSheet } from "react-native";
+import { View, Text, Dimensions, ImageBackground, Image, StyleSheet, TouchableHighlight } from "react-native";
 
-const ButtonInitial = ({ item }) => (
+const ButtonInitial = ({ item, navigation }) => (
+    <TouchableHighlight onPress={() => navigation.navigate('Stories')}>
     <ImageBackground style={{ 
             width: '100%',
             height: 140,
@@ -27,6 +28,7 @@ const ButtonInitial = ({ item }) => (
         </View>
         
     </ImageBackground>
+     </TouchableHighlight>
 )
 
 const styles = StyleSheet.create({

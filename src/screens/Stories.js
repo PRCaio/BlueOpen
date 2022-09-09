@@ -1,6 +1,7 @@
 import react from "react";
-import { FlatList, View, Text, StyleSheet, ImageBackground, Image, TouchableHighlight } from "react-native";
-import ButtonInitial from "../components/ButtonIicial";
+import { FlatList, View, Text, StyleSheet, ImageBackground, Image, Modal, TouchableHighlight } from "react-native";
+import ButtonStories from "../components/ButtonStories";
+import Storyletter from "../components/Storyletter";
 
 const list = [
     {
@@ -99,6 +100,54 @@ const list = [
         imgBg: require('./../images/gb1.jpg'),
         bgColor: `#696969`
     },
+    {
+        id: '4',
+        numberStores: '2',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/moto.jpeg')
+            }
+        ],
+        imgBg: require('./../images/gb1.jpg'),
+        bgColor: `#daa520`
+    },
+    {
+        id: '5',
+        numberStores: '2',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/casa.jpeg')
+            }
+        ],
+        imgBg: require('./../images/gb2.jpg'),
+        bgColor: `#20b2aa`
+    },
+    {
+        id: '6',
+        numberStores: '2',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/casa.jpeg')
+            }
+        ],
+        imgBg: require('./../images/gb1.jpg'),
+        bgColor: `#696969`
+    },
 ];
 
 const DATA = [
@@ -123,19 +172,22 @@ const Item = ({ title }) => (
 );
 
 
-export default function Home({navigation}) {
+export default function Stories() {
 
     const renderItem = ({ item }) => (
-        <ButtonInitial item={item} navigation={navigation} />
+        <ButtonStories item={item} />
     );
 
     return (
         <View>
+            
             <FlatList
                 data={list}
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
+                numColumns={2}
             />
+            
         </View>
     )
 }
@@ -145,9 +197,10 @@ const styles = StyleSheet.create({
     body: {
         width: '100%',
         height: 90,
-        flexDirection: 'row',
+        flexDirection: "row",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        flexWrap: "wrap"
     },
     texts: {
         flex: 1,
