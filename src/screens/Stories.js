@@ -6,6 +6,102 @@ import Storyletter from "../components/Storyletter";
 const list = [
     {
         id: '1',
+        numberStores: 'Covid',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/moto.jpeg')
+            }
+        ],
+        imgBg: '',
+        bgColor: `#20b2aa`
+    },
+    {
+        id: '2',
+        numberStores: 'SarsCov',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/casa.jpeg')
+            }
+        ],
+        imgBg: '',
+        bgColor: `#6495ed`
+    },
+    {
+        id: '3',
+        numberStores: 'Gripe',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/casa.jpeg')
+            }
+        ],
+        imgBg: '',
+        bgColor: `#1e90ff`
+    },
+    {
+        id: '4',
+        numberStores: 'Bronquite',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/moto.jpeg')
+            }
+        ],
+        imgBg: '',
+        bgColor:`#87cefa`
+    },
+    {
+        id: '5',
+        numberStores: 'Catapora',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/casa.jpeg')
+            }
+        ],
+        imgBg: '',
+        bgColor: `#20b2aa`
+    },
+    {
+        id: '6',
+        numberStores: '2',
+        stores: [
+            {
+                id: '1',
+                imgBg: require('./../images/casa.jpeg')
+            },
+            {
+                id: '2',
+                imgBg: require('./../images/casa.jpeg')
+            }
+        ],
+        imgBg: '',
+        bgColor: `#6495ed`
+    },
+    {
+        id: '4',
         numberStores: '2',
         stores: [
             {
@@ -18,55 +114,7 @@ const list = [
             }
         ],
         imgBg: '',
-        bgColor: `#006400`
-    },
-    {
-        id: '2',
-        numberStores: '2',
-        stores: [
-            {
-                id: '1',
-                imgBg: require('./../images/casa.jpeg')
-            },
-            {
-                id: '2',
-                imgBg: require('./../images/casa.jpeg')
-            }
-        ],
-        imgBg: require('./../images/gb2.jpg'),
-        bgColor: `#ff8c00`
-    },
-    {
-        id: '3',
-        numberStores: '2',
-        stores: [
-            {
-                id: '1',
-                imgBg: require('./../images/casa.jpeg')
-            },
-            {
-                id: '2',
-                imgBg: require('./../images/casa.jpeg')
-            }
-        ],
-        imgBg: require('./../images/gb1.jpg'),
-        bgColor: `#2f4f4f`
-    },
-    {
-        id: '4',
-        numberStores: '2',
-        stores: [
-            {
-                id: '1',
-                imgBg: require('./../images/casa.jpeg')
-            },
-            {
-                id: '2',
-                imgBg: require('./../images/moto.jpeg')
-            }
-        ],
-        imgBg: require('./../images/gb1.jpg'),
-        bgColor: `#daa520`
+        bgColor: `#1e90ff`
     },
     {
         id: '5',
@@ -81,8 +129,8 @@ const list = [
                 imgBg: require('./../images/casa.jpeg')
             }
         ],
-        imgBg: require('./../images/gb2.jpg'),
-        bgColor: `#20b2aa`
+        imgBg: '',
+        bgColor: `#87cefa`
     },
     {
         id: '6',
@@ -97,56 +145,8 @@ const list = [
                 imgBg: require('./../images/casa.jpeg')
             }
         ],
-        imgBg: require('./../images/gb1.jpg'),
-        bgColor: `#696969`
-    },
-    {
-        id: '4',
-        numberStores: '2',
-        stores: [
-            {
-                id: '1',
-                imgBg: require('./../images/casa.jpeg')
-            },
-            {
-                id: '2',
-                imgBg: require('./../images/moto.jpeg')
-            }
-        ],
-        imgBg: require('./../images/gb1.jpg'),
-        bgColor: `#daa520`
-    },
-    {
-        id: '5',
-        numberStores: '2',
-        stores: [
-            {
-                id: '1',
-                imgBg: require('./../images/casa.jpeg')
-            },
-            {
-                id: '2',
-                imgBg: require('./../images/casa.jpeg')
-            }
-        ],
-        imgBg: require('./../images/gb2.jpg'),
-        bgColor: `#20b2aa`
-    },
-    {
-        id: '6',
-        numberStores: '2',
-        stores: [
-            {
-                id: '1',
-                imgBg: require('./../images/casa.jpeg')
-            },
-            {
-                id: '2',
-                imgBg: require('./../images/casa.jpeg')
-            }
-        ],
-        imgBg: require('./../images/gb1.jpg'),
-        bgColor: `#696969`
+        imgBg: '',
+        bgColor:`#6495ed`
     },
 ];
 

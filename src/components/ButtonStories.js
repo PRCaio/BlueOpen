@@ -30,7 +30,7 @@ const ButtonStories = ({ item }) =>{
             >
                 <View style={styles.texts}>
                     <Text style={styles.numberStores}>
-                        {item.numberStores} Histórias
+                        {item.numberStores} 
                     </Text>
                 </View>
 

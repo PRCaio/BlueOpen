@@ -1,67 +1,65 @@
 import React from "react";
 import { View, Text, Dimensions, ImageBackground, Image, StyleSheet, TouchableHighlight, TouchableOpacity } from "react-native";
 
-const Storyanswer = ({ item, navigation, close, open }) => (
-   <View>
-    <TouchableOpacity onPress={() => close()}>
-        <Text>A resposta é essa mesma</Text>
-    </TouchableOpacity>
-   </View>
+
+const Storyanswer = ({ close }) => (
+    <View>
+        <ImageBackground style={styles.body}>
+            <TouchableOpacity style={styles.back} onPress={
+                () => close()}>
+                
+                <View  style={styles.left1}/>
+                <View  style={styles.left2}/>
+            </TouchableOpacity>
+
+            <Text style={styles.title}>COVID</Text>
+            <Text style={styles.text}>O covid é algo ruim, só vacina pode te salvar</Text>
+            
+
+        </ImageBackground>
+    </View>
 )
 
 const styles = StyleSheet.create({
     body: {
         width: '100%',
-        height: 140,
-        flexDirection: "row",
+        height: '100%',
+       
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        backgroundColor: `#1e90ff`
     },
-    texts: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    number: {
-        color: `#dcdcdc`,
-        fontSize: 40,
+    title: {
+        color: 'white',
+        fontSize: 25,
         fontWeight: "bold"
     },
-    numberStores: {
+    back: {
+        position: 'absolute',
+        top: 30, 
+        left: 25,
+        width: 25,
+        height: 25,
+    },
+    left1: {
+        width: 25,
+        height: 4,
+        backgroundColor: 'white',
+        transform: [{ rotate: '-30deg' }],
+        borderRadius: 2
+    },
+    left2: {
+        width: 25,
+        height: 4,
+        backgroundColor: 'white',
+        transform: [{ rotate: '+30deg' }],
+        borderRadius: 2,
+        top: 8
+    },
+    text: {
         color: "white",
         fontSize: 15,
         fontWeight: "bold"
-    },
-    images: {
-        flex: 2,
-        flexDirection: "row",
-        alignItems: "center",
-        
-        padding: 15
-        
-
-    },
-    imgBg: {
-        width: 80,
-        height: 80,        
-        bottom: -5,
-        zindex: 4,
-        transform: [{ rotate: '-10deg' }],
-    },
-    sImgBg: {
-        width: 80,
-        height: 80,        
-        left: 35,
-        transform: [{ rotate: '10deg' }],
-        zindex: -4,
-        bottom: -5,
-    },
-    tImgBg: {
-        width: 90,
-        height: 90,        
-        left: -105,
-        
-        zindex: -4,
     },
 }
 )
