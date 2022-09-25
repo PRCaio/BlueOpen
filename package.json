@@ -1,5 +1,5 @@
 {
-  "name": "gameCard",
+  "name": "blueopen",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,14 +7,18 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "realease": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
+    "@react-native-community/art": "^1.2.0",
     "@react-navigation/material-bottom-tabs": "^6.2.3",
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
+    "axios": "^0.27.2",
     "react": "18.1.0",
-    "react-native": "0.70.0",
+    "react-native": "0.70.1",
+    "react-native-pie": "^1.1.2",
     "react-native-safe-area-context": "^4.3.3",
     "react-native-screens": "^3.17.0",
     "react-native-vector-icons": "^9.2.0",

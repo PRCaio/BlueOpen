@@ -2,8 +2,10 @@ import * as React from 'react';
 import { View, Text, Button, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './screens/Home';
-import Stories from './screens/Stories';
+import Resumo from './screens/Resumo';
+import InicialScreen from './screens/InicialScreen';
+import Tickets from './screens/Tickets';
+import NextMonths from './screens/modal/NextMonths';
 
 function DetailsScreen({ navigation }) {
   return (
@@ -25,7 +27,7 @@ function HomeScreen({ navigation }) {
         title="Go to Details"
         onPress={() => navigation.navigate('Details')}
       />
-      <Home />
+      <Resumo />
     </View>
   );
 }
@@ -47,8 +49,17 @@ function App() {
           headerTintColor: "#FFF",
         }}
       >
+        <Stack.Screen name="InicialScreen" component={InicialScreen}
+          options={{
+            tabBarLabel: 'InicialScreen',
 
-        <Stack.Screen name="Dark Stories" component={Home}
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="playlist-play" size={26} color={color} />
+            ),
+          }}
+        />
+
+        <Stack.Screen name="Resumo" component={Resumo}
           options={{
             tabBarLabel: 'PlayList',
 
@@ -57,9 +68,18 @@ function App() {
             ),
           }}
         />
-        <Stack.Screen name="Stories" component={Stories}
+         <Stack.Screen name="Tickets" component={Tickets}
           options={{
             tabBarLabel: 'PlayList',
+
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="playlist-play" size={26} color={color} />
+            ),
+          }}
+        />
+        <Stack.Screen name="NextMonths" component={NextMonths}
+          options={{
+            tabBarLabel: 'NextMonths',
 
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="playlist-play" size={26} color={color} />
