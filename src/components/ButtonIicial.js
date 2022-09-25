@@ -3,16 +3,7 @@ import { View, Text, Dimensions, ImageBackground, Image, StyleSheet, TouchableHi
 
 const ButtonInitial = ({ item, navigation }) => (
     <TouchableHighlight onPress={() => navigation.navigate('Stories')}>
-    <ImageBackground style={{ 
-            width: '100%',
-            height: 140,
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: item.bgColor
-        }} 
-        //source={item.imgBg}
-        >
+    
         <View style={styles.texts}>
             <Text style={styles.number}>
                 @{item.id}
@@ -22,12 +13,9 @@ const ButtonInitial = ({ item, navigation }) => (
             </Text>
         </View>
         <View style={styles.images}>
-            <Image style={styles.imgBg} source={item.stores[1].imgBg} />
-            <Image style={styles.sImgBg} source={require('./../images/casa.jpeg')} />
-            <Image style={styles.tImgBg} source={item.stores[1].imgBg} />
         </View>
         
-    </ImageBackground>
+   
      </TouchableHighlight>
 )
 

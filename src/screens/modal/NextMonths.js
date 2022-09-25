@@ -1,17 +1,16 @@
 import react, { useState, useEffect } from "react";
 import { FlatList, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, Image, TouchableHighlight } from "react-native";
-import ButtonInitial from "../components/ButtonIicial";
 import axios from "axios";
-import Grafic from "./Grafic";
+
+
 
 
 const baseURL = "https://blue-openapi-2b91.vercel.app/api/data-account";
 
 
-
-export default function Home({ navigation }) {
+export default function NextMonths({ navigation, route }) {
     const [valueTransation, setValueTransation] = useState([])
-
+    const { date } = route.params;
     useEffect(() => {
         // Update the document title using the browser API
         axios.get(baseURL).then((response) => {
@@ -19,6 +18,23 @@ export default function Home({ navigation }) {
         });
         console.log(valueTransation)
     }, []);
+
+    var newList = []
+    for (var i = 0; i < valueTransation.length; i++) {
+        if (valueTransation[i].transactionDate.includes(date) == true) {
+            newList.push(valueTransation[i])
+        }
+    }
+
+    var bancoBtg = []
+
+    for (var i = 0; i < valueTransation.length; i++) {
+        if (valueTransation[i].transactionName.includes('BTG') == true) {
+            bancoBtg.push(valueTransation[i].amount)
+        }
+    }
+
+
 
     const renderItem = ({ item }) => (
         <ButtonInitial item={item} navigation={navigation} />
@@ -29,40 +45,10 @@ export default function Home({ navigation }) {
             <View style={{ height: 1, backgroundColor: 'black' }}></View>
         </View>
     );
-    var newList = []
-    for (var i = 0; i < valueTransation.length; i++) {
-        if (valueTransation[i].transactionDate.includes('2022-09') == true) {
-            newList.push(valueTransation[i])
-        }
-    }
 
-
-    
-    var amountBtg = 0
-    var i = 0
-    var a = 0
-    for (; i < valueTransation.length; i++) {
-        if (valueTransation[i].organizationName.includes('BTG') == true) {
-            amountBtg = amountBtg + valueTransation[i].amount
-        }
-        console.log(amountBtg)
-    }
-
-    var amountBra = 0
-    var i = 0
-    var a = 0
-    for (; i < valueTransation.length; i++) {
-        if (valueTransation[i].organizationName.includes('Bradesco') == true) {
-            amountBra = amountBra + valueTransation[i].amount
-        }
-        console.log(amountBra)
-    }
-    
     return (
         <View>
             <ScrollView>
-
-                <Grafic bra={amountBra} btg={amountBtg}/>
 
                 <View style={{ flexDirection: 'row', alignItens: 'center', display: 'flex', justifyContent: "center" }}>
                     <View style={{
@@ -81,16 +67,6 @@ export default function Home({ navigation }) {
                         margin: 15
                     }} />
                     <Text style={{ margin: 15, width: 80 }}>Bradesco</Text>
-                </View>
-                <View style={{ flexDirection: 'row', alignItems: 'center', width: '100%', marginBottom: 15 }}>
-                    <TouchableOpacity onPress={() => navigation.navigate('NextMonths', { date: '2022-08' })}>
-                        <View style={styles.buttonResume}><Text style={styles.textButton2}>Agosto</Text></View>
-
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('NextMonths', { date: '2022-10' })}>
-                        <View style={styles.buttonResume}><Text style={styles.textButton2}>Outubro</Text></View>
-
-                    </TouchableOpacity>
                 </View>
             </ScrollView>
             <FlatList
